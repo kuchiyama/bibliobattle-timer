@@ -25,7 +25,6 @@ class Timer{
 		if(!this.timerId)this.timerId=window.setInterval((ti)=>ti.tick(),1000,this);
 	}
 	tick(){
-		//console.log("tick");
 		if(this.timerdatas[this.status].end=="INF"||this.count-this.timerdatas[this.status].end<0)this.count++;
 		else this.count--;
 		this.display();
