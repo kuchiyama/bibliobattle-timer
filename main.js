@@ -29,7 +29,6 @@ var Timer = (function () {
             this.timerId = window.setInterval(function (ti) { return ti.tick(); }, 1000, this);
     };
     Timer.prototype.tick = function () {
-        //console.log("tick");
         if (this.timerdatas[this.status].end == "INF" || this.count - this.timerdatas[this.status].end < 0)
             this.count++;
         else
@@ -48,10 +47,15 @@ var Timer = (function () {
         this.display();
     };
     Timer.prototype.display = function () {
-        domtimer.innerHTML = "" + this.count;
+        domtimer.innerHTML = ((this.count / 60) | 0).toZeroString(2) + ":" + (this.count % 60).toZeroString(2);
     };
     return Timer;
 })();
+Number.prototype.toZeroString = function (digit) {
+    if (this >= Math.pow(10, digit))
+        return this;
+    return ((Math.pow(10, digit)).toString() + this).slice(0 - digit);
+};
 window.onload = function () {
     domtimer = document.getElementById("timer");
     domtitle = document.getElementById("timer_title");
