@@ -1,12 +1,17 @@
-body {
+* {
     background-color: black; 
     margin: 0px; 
     padding: 0px; 
     color: white; 
     text-align: center;
-    font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
-    overflow: hidden;
+    font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif; 
     line-height: 1;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {/*Yu GothicはIE11でズレる*/
+    *:not(:target) {
+      font-family: "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+    }
 }
 .wrapper {
   width: 100%;
@@ -14,14 +19,15 @@ body {
   text-align:center
 }
 #timer{
-    margin-top: 5vh;
+    padding-top: 5vh;
     font-size: 65vh;
 }
 #timer + div{
-    margin-top: 6vh;
+    padding-top: 5vh;
 }
 #timer_title {
     background-color: white;
     color: black;
     font-size: 13vh;
+    padding: 1vh;
 }
