@@ -53,7 +53,7 @@ interface TimerData{
 interface Number{to2digit():string;}
 Number.prototype.to2digit = function():string{
     if(this >= 100)return this;
-    return ("00".toString()+this).slice(-2);
+    return ("00"+this).slice(-2);
 };
 window.onload=()=>{
 	domtimer = document.getElementById("timer");

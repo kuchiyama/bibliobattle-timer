@@ -54,7 +54,7 @@ var Timer = (function () {
 Number.prototype.to2digit = function () {
     if (this >= 100)
         return this;
-    return ("00".toString() + this).slice(-2);
+    return ("00" + this).slice(-2);
 };
 window.onload = function () {
     domtimer = document.getElementById("timer");
