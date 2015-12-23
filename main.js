@@ -21,7 +21,7 @@ var Timer = (function () {
         }
         this.status = status;
         domtitle.innerHTML = this.timerdatas[this.status].title;
-        domtitle.style.color = this.timerdatas[this.status].color;
+        domtitle.style.backgroundColor = this.timerdatas[this.status].color;
         domtimer.style.color = this.timerdatas[this.status].color;
         this.count = this.timerdatas[this.status].start;
         this.display();
@@ -29,7 +29,6 @@ var Timer = (function () {
             this.timerId = window.setInterval(function (ti) { return ti.tick(); }, 1000, this);
     };
     Timer.prototype.tick = function () {
-        //console.log("tick");
         if (this.timerdatas[this.status].end == "INF" || this.count - this.timerdatas[this.status].end < 0)
             this.count++;
         else
@@ -48,10 +47,15 @@ var Timer = (function () {
         this.display();
     };
     Timer.prototype.display = function () {
-        domtimer.innerHTML = "" + this.count;
+        domtimer.innerHTML = ((this.count / 60) | 0) + ":" + (this.count % 60).to2digit();
     };
     return Timer;
 })();
+Number.prototype.to2digit = function () {
+    if (this >= 100)
+        return this;
+    return ("00" + this).slice(-2);
+};
 window.onload = function () {
     domtimer = document.getElementById("timer");
     domtitle = document.getElementById("timer_title");

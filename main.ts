@@ -18,7 +18,7 @@ class Timer{
 		}
 		this.status=status;
 		domtitle.innerHTML=this.timerdatas[this.status].title;
-		domtitle.style.color=this.timerdatas[this.status].color;
+		domtitle.style.backgroundColor=this.timerdatas[this.status].color;
 		domtimer.style.color=this.timerdatas[this.status].color;
 		this.count=this.timerdatas[this.status].start;
 		this.display();
@@ -39,7 +39,7 @@ class Timer{
 		this.display();
 	}
 	display(){
-		domtimer.innerHTML=""+this.count;
+		domtimer.innerHTML=((this.count/60)|0)+":"+(this.count%60).to2digit();
 	}
 }
 
@@ -50,6 +50,11 @@ interface TimerData{
 	color:string;
 	sound?:HTMLAudioElement;
 }
+interface Number{to2digit():string;}
+Number.prototype.to2digit = function():string{
+    if(this >= 100)return this;
+    return ("00"+this).slice(-2);
+};
 window.onload=()=>{
 	domtimer = document.getElementById("timer");
 	domtitle = document.getElementById("timer_title");
