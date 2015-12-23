@@ -1,10 +1,10 @@
 body {
-    background-color:#000; 
-    margin:0px; 
-    padding:0px; 
-    color:#FFF; 
-    text-align: center; 
-    font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,sans-serif; 
+    background-color: black; 
+    margin: 0px; 
+    padding: 0px; 
+    color: white; 
+    text-align: center;
+    font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
     overflow: hidden;
     line-height: 1;
 }
@@ -21,7 +21,7 @@ body {
     margin-top: 6vh;
 }
 #timer_title {
-    background-color:#FFF;
-    color:#000;
+    background-color: white;
+    color: black;
     font-size: 13vh;
 }
