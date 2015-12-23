@@ -47,14 +47,14 @@ var Timer = (function () {
         this.display();
     };
     Timer.prototype.display = function () {
-        domtimer.innerHTML = ((this.count / 60) | 0).toZeroString(2) + ":" + (this.count % 60).toZeroString(2);
+        domtimer.innerHTML = ((this.count / 60) | 0) + ":" + (this.count % 60).to2digit();
     };
     return Timer;
 })();
-Number.prototype.toZeroString = function (digit) {
-    if (this >= Math.pow(10, digit))
+Number.prototype.to2digit = function () {
+    if (this >= 100)
         return this;
-    return ((Math.pow(10, digit)).toString() + this).slice(0 - digit);
+    return ("00".toString() + this).slice(-2);
 };
 window.onload = function () {
     domtimer = document.getElementById("timer");

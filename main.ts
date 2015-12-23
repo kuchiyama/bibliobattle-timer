@@ -39,7 +39,7 @@ class Timer{
 		this.display();
 	}
 	display(){
-		domtimer.innerHTML=((this.count/60)|0).toZeroString(2)+":"+(this.count%60).toZeroString(2);
+		domtimer.innerHTML=((this.count/60)|0)+":"+(this.count%60).to2digit();
 	}
 }
 
@@ -50,10 +50,10 @@ interface TimerData{
 	color:string;
 	sound?:HTMLAudioElement;
 }
-interface Number{toZeroString(digit:number):string;}
-Number.prototype.toZeroString = function(digit:number):string{
-    if(this >= 10**digit)return this;
-    return ((10**digit).toString()+this).slice(0-digit);
+interface Number{to2digit():string;}
+Number.prototype.to2digit = function():string{
+    if(this >= 100)return this;
+    return ("00".toString()+this).slice(-2);
 };
 window.onload=()=>{
 	domtimer = document.getElementById("timer");
