@@ -1,0 +1,27 @@
+body {
+    background-color:#000; 
+    margin:0px; 
+    padding:0px; 
+    color:#FFF; 
+    text-align: center; 
+    font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,sans-serif; 
+    overflow: hidden;
+    line-height: 1;
+}
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  text-align:center
+}
+#timer{
+    margin-top: 5vh;
+    font-size: 65vh;
+}
+#timer + div{
+    margin-top: 6vh;
+}
+#timer_title {
+    background-color:#FFF;
+    color:#000;
+    font-size: 13vh;
+}

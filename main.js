@@ -21,7 +21,7 @@ var Timer = (function () {
         }
         this.status = status;
         domtitle.innerHTML = this.timerdatas[this.status].title;
-        domtitle.style.color = this.timerdatas[this.status].color;
+        domtitle.style.backgroundColor = this.timerdatas[this.status].color;
         domtimer.style.color = this.timerdatas[this.status].color;
         this.count = this.timerdatas[this.status].start;
         this.display();
