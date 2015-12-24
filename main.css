@@ -1,11 +1,10 @@
-body {
-    background-color:#000; 
-    margin:0px; 
-    padding:0px; 
-    color:#FFF; 
-    text-align: center; 
-    font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,sans-serif; 
-    overflow: hidden;
+* {
+    background-color: black; 
+    margin: 0px; 
+    padding: 0px; 
+    color: white; 
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif; 
     line-height: 1;
 }
 .wrapper {
@@ -14,14 +13,15 @@ body {
   text-align:center
 }
 #timer{
-    margin-top: 5vh;
+    padding-top: 5vh;
     font-size: 65vh;
 }
 #timer + div{
-    margin-top: 6vh;
+    padding-top: 5vh;
 }
 #timer_title {
-    background-color:#FFF;
-    color:#000;
+    background-color: white;
+    color: black;
     font-size: 13vh;
+    padding: 1vh;
 }
