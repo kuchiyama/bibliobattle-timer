@@ -7,17 +7,24 @@ var Timer = (function () {
         this.timerId = false;
         this.reset();
     }
+    Timer.prototype.setTimer = function () {
+        if (!this.timerId) {
+            var self = this;
+            this.timerId = window.setInterval(function () { self.tick(); }, 1000);
+        }
+    };
+    Timer.prototype.clearTimer = function () {
+        if (this.timerId)
+            window.clearInterval(this.timerId);
+        this.timerId = false;
+    };
     Timer.prototype.start = function (status) {
         if (status === void 0) { status = this.status; }
         if (status >= this.timerdatas.length) {
             if (status == this.timerdatas.length && this.repeat)
                 status = 0;
-            else {
-                if (this.timerId)
-                    window.clearInterval(this.timerId);
-                this.timerId = false;
-                return;
-            }
+            else
+                return this.clearTimer();
         }
         this.status = status;
         domtitle.innerHTML = this.timerdatas[this.status].title;
@@ -25,8 +32,7 @@ var Timer = (function () {
         domtimer.style.color = this.timerdatas[this.status].color;
         this.count = this.timerdatas[this.status].start;
         this.display();
-        if (!this.timerId)
-            this.timerId = window.setInterval(function (ti) { return ti.tick(); }, 1000, this);
+        this.setTimer();
     };
     Timer.prototype.tick = function () {
         if (this.timerdatas[this.status].end == "INF" || this.count - this.timerdatas[this.status].end < 0)
@@ -41,9 +47,7 @@ var Timer = (function () {
         }
     };
     Timer.prototype.reset = function () {
-        if (this.timerId)
-            window.clearInterval(this.timerId);
-        this.timerId = false;
+        this.clearTimer();
         this.status = 0;
         this.count = this.timerdatas[this.status].start;
         domtitle.innerHTML = "";
