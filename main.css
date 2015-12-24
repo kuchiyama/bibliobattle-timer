@@ -4,14 +4,8 @@
     padding: 0px; 
     color: white; 
     text-align: center;
-    font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif; 
+    font-family: "Helvetica Neue", Helvetica, "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif; 
     line-height: 1;
-}
-
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {/*Yu GothicはIE11でズレる*/
-    *:not(:target) {
-      font-family: "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
-    }
 }
 .wrapper {
   width: 100%;
