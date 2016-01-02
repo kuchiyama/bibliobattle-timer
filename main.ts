@@ -49,7 +49,7 @@ class Timer {
         this.display();
     }
     display() {
-        domtimer.innerHTML = ((this.count / 60) | 0) + ":" + (this.count % 60).to2digit();
+        domtimer.innerHTML = "<span class='mono'>"+((this.count / 60) | 0) + "</span>:<span class='mono'>" + (this.count % 60).to2digit()+"</span>";
     }
 }
 

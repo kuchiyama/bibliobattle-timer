@@ -56,7 +56,7 @@ var Timer = (function () {
         this.display();
     };
     Timer.prototype.display = function () {
-        domtimer.innerHTML = ((this.count / 60) | 0) + ":" + (this.count % 60).to2digit();
+        domtimer.innerHTML = "<span class='mono'>" + ((this.count / 60) | 0) + "</span>:<span class='mono'>" + (this.count % 60).to2digit() + "</span>";
     };
     return Timer;
 })();
