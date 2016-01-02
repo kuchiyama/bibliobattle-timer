@@ -1,4 +1,4 @@
-* {
+body {
     background-color: black; 
     margin: 0px; 
     padding: 0px; 
@@ -6,22 +6,58 @@
     text-align: center;
     font-family: "Helvetica Neue", Helvetica, "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif; 
     line-height: 1;
+    overflow: hidden;
 }
 .wrapper {
-  width: 100%;
-  margin: 0 auto;
-  text-align:center
+    width: 100%;
+     margin: 0 auto;
+    text-align:center
 }
 #timer{
-    padding-top: 5vh;
+    padding-top: 3vh;
     font-size: 65vh;
 }
+.mono{
+    font-family: 'Droid Sans Mono',monospace; 
+}
 #timer + div{
-    padding-top: 5vh;
+    padding-top: 4vh;
 }
 #timer_title {
     background-color: white;
     color: black;
     font-size: 13vh;
     padding: 1vh;
+}
+.footer{
+    padding-top: 4vh;
+    width: 100%;
+}
+button {
+    font: inherit;
+    margin: auto 0px;
+    font-size: 4vh;
+    line-height: 1.42857;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    width:50%;
+    text-transform: uppercase;
+}
+@media screen and (orientation: portrait) {
+   /* 縦向きの場合のスタイル */
+    #timer{
+        font-size: 40vw;
+    }
+    #timer_title{
+        font-size: 20vw;
+    }
+    button{
+        font-size: 8vw;
+    }
 }
